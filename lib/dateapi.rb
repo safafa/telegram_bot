@@ -5,9 +5,8 @@ require 'json'
 
 class DateApi
   def initialize(month, day)
-    @@month= month
+    @@month = month
     @@day = day
-    
   end
 
   def message
@@ -17,8 +16,8 @@ class DateApi
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
     request = Net::HTTP::Get.new(url)
-    request["x-rapidapi-key"] = '5ab8b06151msh2a2292ff926d71cp1cf742jsn4ef5742bf2ab'
-    request["x-rapidapi-host"] = 'numbersapi.p.rapidapi.com'
+    request['x-rapidapi-key'] = '5ab8b06151msh2a2292ff926d71cp1cf742jsn4ef5742bf2ab'
+    request['x-rapidapi-host'] = 'numbersapi.p.rapidapi.com'
 
     response = http.request(request)
     JSON.parse(response.read_body)
