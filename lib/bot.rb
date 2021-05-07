@@ -1,5 +1,5 @@
 require 'telegram/bot'
-
+require_relative 'dateapi'
 
 
 class Bot 
@@ -13,9 +13,11 @@ class Bot
                 
                 when 'Fine'
                     bot.api.send_message(chat_id: message.chat.id, text: "That's good to hear")
-                    bot.api.send_message(chat_id: message.chat.id, text: "Send Date to get started")
+                    bot.api.send_message(chat_id: message.chat.id, text: "Send Date you're curious about to get started")
                 when 'Date'
-                    bot.api.send_message(chat_id: message.chat.id, text: "Now tell me what date are you curious about?")
+                    response = DateApi.new("7","16")
+                    msg = response.message
+                    bot.api.send_message(chat_id: message.chat.id, text: "Same day year #{msg["year"]}, #{msg["text"]}")
                 end
             end
           end
