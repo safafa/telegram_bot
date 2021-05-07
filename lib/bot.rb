@@ -3,12 +3,15 @@ require_relative 'dateapi'
 
 class Bot
   def initialize(token)
-    @@token = token
-    Telegram::Bot::Client.run(@@token) do |bot|
+    @token = token
+  end
+
+  def chat
+    Telegram::Bot::Client.run(@token) do |bot|
       bot.listen do |message|
         case message.text
         when '/start'
-          question = 'Hey, How are you?'
+          question = 'Hello, How are you?'
           answers =
             Telegram::Bot::Types::ReplyKeyboardMarkup
               .new(keyboard: [%w[Fine Good], ["I'm alive", "I'm Ok"]], one_time_keyboard: true)
@@ -55,7 +58,7 @@ class Bot
           bot.api.send_message(chat_id: message.chat.id, text: "Bye, #{message.from.first_name}",
                                date: message.date)
         else bot.api.send_message(chat_id: message.chat.id,
-                                  text: "Invalid entry, #{message.from.first_name}, Here is the list of commands you can send  /start,  /stop , /Today or /Random")
+                                  text: "#{message.from.first_name},try /start,  /stop , /Today or /Random")
         end
       end
     end
