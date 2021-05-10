@@ -1,9 +1,13 @@
 # telegram_bot
 
-A telegram bot that you can use to know trivial information about  dates. 
+A telegram bot that you can use to get trivial information about  dates. 
+
+to try it launch the Telegram app and search for @DateTrivia
 
 
 ![screenshot](./img/screenshot.jpeg)
+
+The bot uses numbers api from [rapidapi](https://rapidapi.com/divad12/api/numbers-1)
 
 ## Built With
 
@@ -15,9 +19,9 @@ To get a local copy up and running follow these simple example steps.
 
 Go to https://github.com/safafa/telegram_bot
 
-1. Click on the code and copy the HTML code.
-2. Use terminal to clone this repository on your local machine.
-3. Create a bot using botfather is telegram app.
+1. Click on the code and copy the code.
+2. Use a terminal to clone this repository on your local machine.
+3. Create a bot using the Botfather in the telegram app.
 4. Copy the token and replace it in the code.
 3. Run <code>git checkout -b your-branch-name</code>. Make your contributions.
 4. Push your branch up to your forked repository.
@@ -26,7 +30,7 @@ Go to https://github.com/safafa/telegram_bot
 
 To run the tests locally :
 
-- Run each file in the spec folder individualy.
+- Run each file in the spec folder individually.
 
    eg : `rspec ./spec/bot_spec.rb` 
 
@@ -41,7 +45,7 @@ To run the tests locally :
 2) Go to the directory where the bot is located, it will be the one where you cloned the repository. Execute the datebot.rb by typing:
     - <code>runy bin/datebot.rb</code>
 
-3) Alright! Your bot is up an running.
+3) Alright! Your bot is up and running.
 
 
 Have fun!
