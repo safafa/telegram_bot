@@ -10,18 +10,17 @@ AllCops:
 Layout/LineLength:
   Max: 120
 Metrics/MethodLength:
-  IgnoredMethods: ['chat']
+  IgnoredMethods: ['cases']
   Max: 20
 Metrics/AbcSize:
-  IgnoredMethods: ['chat']
   Max: 50
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  IgnoredMethods: ['describe', 'bot.listen', 'Telegram::Bot::Client.run' ]
+  IgnoredMethods: ['describe']
   Max: 30
 Metrics/CyclomaticComplexity:
- IgnoredMethods: ['chat']
+ IgnoredMethods: ['cases']
 
 
 Style/Documentation:
