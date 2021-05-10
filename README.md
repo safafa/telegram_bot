@@ -24,10 +24,11 @@ Go to https://github.com/safafa/telegram_bot
 3. Use a terminal to clone this repository on your local machine.
 4. Browse to the repository folder on your local machine and run <code> bundle install </code> to install all the gems needed for this code to work.
 5. Create a bot using the Botfather in the telegram app.
-6. create .env file inside the root folder.
-7. Copy the token and place it in the .env file like this: BOT_KEY="token".
-8. Run <code>git checkout -b your-branch-name</code>. Make your contributions.
-9. Push your branch up to your forked repository.
+6. Copy the token and place it in datebot.rb instead of <code> Bot.new(ENV['BOT_KEY'])</code> do <code> Bot.new('token')</code>.
+7. Or create .env file inside the root folder.
+8. Copy the token and place it in the .env file like this: BOT_KEY="token".
+9. Run <code>git checkout -b your-branch-name</code>. Make your contributions.
+10. Push your branch up to your forked repository.
 
 ## Running tests
 
