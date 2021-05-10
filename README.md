@@ -19,12 +19,15 @@ To get a local copy up and running follow these simple example steps.
 
 Go to https://github.com/safafa/telegram_bot
 
-1. Click on the code and copy the code.
-2. Use a terminal to clone this repository on your local machine.
-3. Create a bot using the Botfather in the telegram app.
-4. Copy the token and replace it in the code.
-3. Run <code>git checkout -b your-branch-name</code>. Make your contributions.
-4. Push your branch up to your forked repository.
+1. Install ruby on your local machine
+2. Click on the code and copy the code.
+3. Use a terminal to clone this repository on your local machine.
+4. Browse to the repository folder on your local machine and run <code> bundle install </code> to install all the gems needed for this code to work.
+5. Create a bot using the Botfather in the telegram app.
+6. create .env file inside the root folder.
+7. Copy the token and place it in the .env file like this: BOT_KEY="token".
+8. Run <code>git checkout -b your-branch-name</code>. Make your contributions.
+9. Push your branch up to your forked repository.
 
 ## Running tests
 
@@ -43,7 +46,7 @@ To run the tests locally :
     - On Mac => <code>Control + Option + Shift + T</code>
 
 2) Go to the directory where the bot is located, it will be the one where you cloned the repository. Execute the datebot.rb by typing:
-    - <code>runy bin/datebot.rb</code>
+    - <code>ruby bin/datebot.rb</code>
 
 3) Alright! Your bot is up and running.
 
