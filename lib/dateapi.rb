@@ -18,8 +18,13 @@ class DateApi
     request = Net::HTTP::Get.new(url)
     request['x-rapidapi-key'] = '5ab8b06151msh2a2292ff926d71cp1cf742jsn4ef5742bf2ab'
     request['x-rapidapi-host'] = 'numbersapi.p.rapidapi.com'
-
-    response = http.request(request)
-    JSON.parse(response.read_body)
+    begin
+      response = http.request(request)
+    rescue StandardError
+      print 'API errors request has been sent again'
+      retry
+    else
+      JSON.parse(response.read_body)
+    end
   end
 end
