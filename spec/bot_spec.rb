@@ -1,13 +1,15 @@
 require_relative '../lib/bot'
-require 'dotenv'
-Dotenv.load
+
 
 describe Bot do
   let(:bot) { Bot.new(ENV['BOT_KEY']) }
   let(:telegram) { bot.telegram_bot }
   describe '.initialize' do
-    it 'initialize a the token variable for a new bot' do
+    it 'instantiate Bot class' do
       expect(bot).to be_instance_of(Bot)
+    end
+    it 'initialize  a the token variable for a new bot' do
+      expect(bot.token).to eq ENV['BOT_KEY']
     end
     it 'Throw error when no argument is given' do
       expect { Bot.new }.to raise_error

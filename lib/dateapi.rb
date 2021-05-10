@@ -4,6 +4,7 @@ require 'openssl'
 require 'json'
 
 class DateApi
+  attr_reader :day, :month
   def initialize(month, day)
     @month = month
     @day = day
