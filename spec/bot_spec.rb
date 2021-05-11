@@ -1,10 +1,9 @@
 require_relative '../lib/bot'
-
+BOTKEY = '1814035314:AAEJA9-HRNunFeaI5UxGV4KBV6LUBSK8v6g'.freeze
 describe Bot do
-  let(:bot) { Bot.new('1814035314:AAEJA9-HRNunFeaI5UxGV4KBV6LUBSK8v6g') }
+  let(:bot) { Bot.new(BOTKEY) }
   let(:telegram) { bot.telegram_bot }
   describe '.initialize' do
-    BOTKEY = '1814035314:AAEJA9-HRNunFeaI5UxGV4KBV6LUBSK8v6g'
     it 'instantiate Bot class' do
       expect(bot).to be_instance_of(Bot)
     end
