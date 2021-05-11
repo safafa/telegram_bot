@@ -4,10 +4,11 @@ require 'openssl'
 require 'json'
 
 class DateApi
-  attr_reader :day, :month
+  attr_reader :day, :month, :api_err
   def initialize(month, day)
     @month = month
     @day = day
+    @api_err = ""
   end
 
   def message
@@ -21,10 +22,12 @@ class DateApi
     request['x-rapidapi-host'] = 'numbersapi.p.rapidapi.com'
     begin
       response = http.request(request)
-    rescue StandardError
-      print 'API errors request has been sent again'
+    rescue Timeout
+      @api_err = 'API errors request has been sent again'
+      puts "HIIIIIIIIII"
       retry
     else
+      puts "HELLO"
       JSON.parse(response.read_body)
     end
   end

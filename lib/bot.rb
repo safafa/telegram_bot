@@ -63,7 +63,7 @@ class Bot
     time = Time.at(rand * Time.now.to_i)
     day = time.day.to_s
     month = time.month.to_s
-    response = DateApi.new(day, month)
+    response = DateApi.new(month, day)
     msg = response.message
     bot.api.send_message(chat_id: message.chat.id,
                          text: "#{day}-#{month}-#{msg['year']},  #{msg['text']}")
@@ -73,7 +73,7 @@ class Bot
     time = Time.now
     day = time.day.to_s
     month = time.month.to_s
-    response = DateApi.new(day, month)
+    response = DateApi.new(month, day)
     msg = response.message
     bot.api.send_message(chat_id: message.chat.id,
                          text: "#{day}-#{month}-#{msg['year']},  #{msg['text']}")
