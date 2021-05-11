@@ -25,10 +25,8 @@ class DateApi
       response = http.request(request)
     rescue Timeout
       @api_err = 'API errors request has been sent again'
-      puts 'HIIIIIIIIII'
       retry
     else
-      puts 'HELLO'
       JSON.parse(response.read_body)
     end
   end
