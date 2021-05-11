@@ -27,7 +27,7 @@ Go to https://github.com/safafa/telegram_bot
 6. Copy the token and place it in datebot.rb instead of <code> Bot.new(ENV['BOT_KEY'])</code> do <code> Bot.new('token')</code>.
 7. Or create .env file inside the root folder.
 8. Copy the token and place it in the .env file like this: BOT_KEY="token".
-9. Run <code>git checkout -b your-branch-name</code>. Make your contributions.
+9. To make your contributions. Run <code>git checkout -b your-branch-name</code>.
 10. Push your branch up to your forked repository.
 
 ## Running tests
@@ -36,7 +36,7 @@ To run the tests locally :
 
 - Run each file in the spec folder individually.
 
-   eg : `rspec ./spec/bot_spec.rb` 
+   eg : `rspec ./spec/bot_spec.rb`  `rspec ./spec/dateapi_spec.rb`
 
 
 ## Instructions
@@ -46,7 +46,7 @@ To run the tests locally :
     - On Linux => <code>ctrl + alt + T</code>
     - On Mac => <code>Control + Option + Shift + T</code>
 
-2) Go to the directory where the bot is located, it will be the one where you cloned the repository. Execute the datebot.rb by typing:
+2) Go to the directory where the bot is located, it will be the one where you cloned the repository. After you follow the steps in getting started, execute the datebot.rb by typing:
     - <code>ruby bin/datebot.rb</code>
 
 3) Alright! Your bot is up and running.
