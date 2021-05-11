@@ -1,6 +1,5 @@
 require_relative '../lib/bot'
 
-
 describe Bot do
   let(:bot) { Bot.new(ENV['BOT_KEY']) }
   let(:telegram) { bot.telegram_bot }

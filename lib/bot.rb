@@ -3,6 +3,7 @@ require_relative 'dateapi'
 
 class Bot
   attr_reader :token
+
   def initialize(token)
     @token = token
   end

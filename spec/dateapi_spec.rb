@@ -17,33 +17,35 @@ describe DateApi do
     end
   end
 
-  describe '#message'  do
+  describe '#message' do
     it 'return a Hash object' do
-      stub_request(:get, "https://numbersapi.p.rapidapi.com/06/01/date?fragment=true&json=true").
-         with(
-           headers: {
-          'Accept'=>'*/*',
-          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-          'Host'=>'numbersapi.p.rapidapi.com',
-          'User-Agent'=>'Ruby',
-          'X-Rapidapi-Host'=>'numbersapi.p.rapidapi.com',
-          'X-Rapidapi-Key'=>'5ab8b06151msh2a2292ff926d71cp1cf742jsn4ef5742bf2ab'
-           }).
-         to_return(status: 200, body: '{"text": "the Royal Ulster Constabulary is founded","year": 1922}', headers: {})
+      stub_request(:get, 'https://numbersapi.p.rapidapi.com/06/01/date?fragment=true&json=true')
+        .with(
+          headers: {
+            'Accept' => '*/*',
+            'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+            'Host' => 'numbersapi.p.rapidapi.com',
+            'User-Agent' => 'Ruby',
+            'X-Rapidapi-Host' => 'numbersapi.p.rapidapi.com',
+            'X-Rapidapi-Key' => '5ab8b06151msh2a2292ff926d71cp1cf742jsn4ef5742bf2ab'
+          }
+        )
+        .to_return(status: 200, body: '{"text": "the Royal Ulster Constabulary is founded","year": 1922}', headers: {})
       expect(dateapi.message).to be_instance_of(Hash)
     end
-    it 'return Ressource not found when eror 404', :authorized => true do
-      stub_request(:get, "https://numbersapi.p.rapidapi.com/06/01/date?fragment=true&json=true").
-    with(
-      headers: {
-     'Accept'=>'*/*',
-     'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-     'Host'=>'numbersapi.p.rapidapi.com',
-     'User-Agent'=>'Ruby',
-     'X-Rapidapi-Host'=>'numbersapi.p.rapidapi.com',
-     'X-Rapidapi-Key'=>'5ab8b06151msh2a2292ff926d71cp1cf742jsn4ef5742bf2ab'
-      }).
-      to_timeout
+    it 'return Ressource not found when eror 404', authorized: true do
+      stub_request(:get, 'https://numbersapi.p.rapidapi.com/06/01/date?fragment=true&json=true')
+        .with(
+          headers: {
+            'Accept' => '*/*',
+            'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+            'Host' => 'numbersapi.p.rapidapi.com',
+            'User-Agent' => 'Ruby',
+            'X-Rapidapi-Host' => 'numbersapi.p.rapidapi.com',
+            'X-Rapidapi-Key' => '5ab8b06151msh2a2292ff926d71cp1cf742jsn4ef5742bf2ab'
+          }
+        )
+        .to_timeout
       expect { dateapi.message }.to raise_error
     end
   end

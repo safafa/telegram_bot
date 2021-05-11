@@ -5,10 +5,11 @@ require 'json'
 
 class DateApi
   attr_reader :day, :month, :api_err
+
   def initialize(month, day)
     @month = month
     @day = day
-    @api_err = ""
+    @api_err = ''
   end
 
   def message
@@ -24,10 +25,10 @@ class DateApi
       response = http.request(request)
     rescue Timeout
       @api_err = 'API errors request has been sent again'
-      puts "HIIIIIIIIII"
+      puts 'HIIIIIIIIII'
       retry
     else
-      puts "HELLO"
+      puts 'HELLO'
       JSON.parse(response.read_body)
     end
   end
