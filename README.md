@@ -72,4 +72,5 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
+- To [Zeenat Lawal](https://github.com/ZeenatLawal) and [Sebastián Rizzuto](https://github.com/srizzuto)
 - To my Stand Up Team who kept my morale up!
